@@ -1,61 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EA Solutions - Practical Tutorials</title>
-  <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EA-Solutions | Every Article Solutions</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <main class="container">
-    <section class="hero">
-      <h2>Practical tutorials, step-by-step.</h2>
-      <p class="lead">Short how-tos and hands-on guides designed to get things done. Filter, search, and open an article to read the full step-by-step tutorial.</p>
-      <div class="hero-cta">
-        <button id="new-article" class="btn btn-primary">Start a Tutorial</button>
-        <a href="#" id="rss" class="muted">RSS Feed</a>
-      </div>
-    </section>
-
-    <section class="grid">
-      <aside class="sidebar">
-        <h4>Featured</h4>
-        <div id="featured" class="list"></div>
-
-        <div class="subscribe">
-          <h5>Join the notes</h5>
-          <input id="email" type="email" placeholder="you@email.com">
-          <button id="join" class="btn">Join</button>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <i class="fas fa-lightbulb logo-icon"></i>
+                <div class="logo-text">EA-<span>Solutions</span></div>
+            </div>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Articles</a></li>
+                    <li><a href="#">Categories</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
         </div>
-      </aside>
+    </header>
 
-      <section class="articles" id="articles">
-        <!-- Articles will be dynamically inserted here -->
-      </section>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Every Article, Every Solution</h1>
+                <p>Welcome to EA-Solutions, your go-to destination for insightful articles, expert solutions, and thought-provoking content across technology, business, and lifestyle.</p>
+                <div class="hero-buttons">
+                    <a href="#" class="btn">Explore Articles</a>
+                    <a href="#" class="btn btn-outline">Subscribe</a>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section class="cta-card">
-      <div>
-        <h4>Write clear tutorials</h4>
-        <p>Break steps into numbered sections and keep examples small. This site favors clarity and action.</p>
-      </div>
-      <div>
-        <button id="start-draft" class="btn btn-primary">Start a Draft</button>
-      </div>
+    <!-- Featured Posts -->
+    <section class="container">
+        <div class="section-title">
+            <h2>Featured Articles</h2>
+        </div>
+        <div class="posts-grid">
+            <!-- Post 1 -->
+            <div class="post-card">
+                <div class="post-img">
+                    <i class="fas fa-laptop-code"></i>
+                </div>
+                <div class="post-content">
+                    <span class="post-category">Technology</span>
+                    <h3 class="post-title">The Future of Web Development in 2023</h3>
+                    <p class="post-excerpt">Exploring the latest trends and technologies shaping the future of web development and how developers can stay ahead.</p>
+                    <div class="post-meta">
+                        <span><i class="far fa-calendar"></i> June 12, 2023</span>
+                        <span><i class="far fa-clock"></i> 5 min read</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Post 2 -->
+            <div class="post-card">
+                <div class="post-img">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <div class="post-content">
+                    <span class="post-category">Business</span>
+                    <h3 class="post-title">Building Sustainable Startups in a Digital World</h3>
+                    <p class="post-excerpt">Key strategies for creating environmentally and financially sustainable startups in today's competitive market.</p>
+                    <div class="post-meta">
+                        <span><i class="far fa-calendar"></i> June 5, 2023</span>
+                        <span><i class="far fa-clock"></i> 7 min read</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Post 3 -->
+            <div class="post-card">
+                <div class="post-img">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <div class="post-content">
+                    <span class="post-category">Lifestyle</span>
+                    <h3 class="post-title">Mindfulness Practices for Remote Workers</h3>
+                    <p class="post-excerpt">Effective mindfulness techniques to maintain productivity and mental well-being while working from home.</p>
+                    <div class="post-meta">
+                        <span><i class="far fa-calendar"></i> May 28, 2023</span>
+                        <span><i class="far fa-clock"></i> 4 min read</span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <footer class="site-footer">© <span id="year"></span> ea-solutions — every-article-solutions</footer>
-  </main>
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="container">
+            <h2>Stay Updated</h2>
+            <p>Subscribe to our newsletter and never miss our latest articles and insights. Join thousands of subscribers today!</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Enter your email address" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </section>
 
-  <!-- ARTICLE READER OVERLAY -->
-  <div id="reader" class="reader hidden" aria-hidden="true">
-    <div class="reader-inner">
-      <button id="close-reader" class="reader-close" aria-label="Close reader">×</button>
-      <article id="reader-content"></article>
-    </div>
-  </div>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo">
+                        <i class="fas fa-lightbulb logo-icon"></i>
+                        <div class="logo-text">EA-<span>Solutions</span></div>
+                    </div>
+                    <p>Providing insightful articles and practical solutions for the modern world. Your trusted source for knowledge and inspiration.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Articles</a></li>
+                        <li><a href="#">Categories</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Categories</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Technology</a></li>
+                        <li><a href="#">Business</a></li>
+                        <li><a href="#">Lifestyle</a></li>
+                        <li><a href="#">Health & Wellness</a></li>
+                        <li><a href="#">Design</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-envelope"></i> contact@easolutions.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Innovation Street, Tech City</p>
+                    <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 EA-Solutions. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 
-  <script src="js/app.js"></script>
+    <script src="script.js"></script>
 </body>
-
 </html>
