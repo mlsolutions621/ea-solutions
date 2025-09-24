@@ -1,262 +1,332 @@
-/* article-style.css */
+:root {
+    --primary: #4361ee;
+    --secondary: #3f37c9;
+    --accent: #4cc9f0;
+    --light: #f8f9fa;
+    --dark: #212529;
+    --gray: #6c757d;
+    --success: #4ade80;
+    --warning: #facc15;
+    --danger: #f87171;
+    --transition: all 0.3s ease;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+    --radius: 12px;
+}
 
-/* Link to the main CSS file first */
-/* This is done in the HTML using multiple <link> tags */
-/* We will define specific overrides here */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #fafbff;
+    color: var(--dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
 
-/* --- Header Override for Article Pages --- */
-/* If you want the logo to be centered in the header on article pages */
-/* (This changes the default layout from logo-left, menu-right) */
-/* You might need to adjust the HTML structure slightly if using space-between */
+h1, h2, h3, h4, h5 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    line-height: 1.3;
+}
 
-/* Option 1: If you want the logo to be the center item */
-/* This requires changing the HTML to have logo in the center */
-/* <div class="header-container">
-       <div></div> <!- - Empty space or left item - ->
-       <div class="logo">...</div>
-       <nav>...</nav>
-   </div> */
-/* And then use justify-content: space-around or space-evenly */
-/*
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header Styles */
+header {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: var(--shadow);
+}
+
 .header-container {
-    justify-content: space-around; 
-}
-*/
-
-/* Option 2: If you want the logo div itself to be centered within the container */
-/* This requires changing the container's flex behavior */
-.header-container {
-    justify-content: center; /* This centers the logo, but pushes the nav to the right */
-    /* To keep nav on the right, you might need absolute positioning or a different layout */
-    position: relative; /* For absolute positioning of nav */
-}
-
-.logo {
-    /* No specific change needed here, it will be centered due to justify-content: center */
-    /* on the parent .header-container */
-    order: 1; /* Place it in the center visually if needed */
-}
-
-/* Move the nav to the right using absolute positioning */
-nav {
-    position: absolute;
-    right: 0; /* Align nav to the right edge of the container */
-    top: 50%;
-    transform: translateY(-50%); /* Vertically center nav */
-}
-
-/* Hide the mobile menu button if it's not needed for centering logic */
-/* Or handle it differently in the JS for this layout */
-.mobile-menu {
-    /* display: none; */ /* Only if you don't want the mobile menu */
-    position: absolute;
-    left: 0; /* Position mobile menu on the left */
-    top: 50%;
-    transform: translateY(-50%); /* Vertically center mobile menu */
-}
-
-/* Option 3: Keep space-between but center the logo item itself */
-/* This is less common and requires specific width management */
-/*
-.header-container {
-    justify-content: space-between; 
+    display: flex;
+    justify-content: space-between;
     align-items: center;
 }
+
 .logo {
-    margin: 0 auto; /* This centers the logo but might interfere with space-between */
-}
-nav ul {
-    margin-left: auto; /* Push nav to the right */
-}
-*/
-
-/* For now, using Option 2 seems most straightforward for centering the logo visually */
-/* while keeping the nav on the right, assuming the HTML structure is flexible enough */
-/* or the mobile menu is handled separately if visible. */
-
-/* --- End Header Override --- */
-
-/* --- Article-Specific Main Styles --- */
-/* You can add styles specific to the article content here if needed */
-/* For example, styling the article content area */
-
-main.article-main {
-    padding: 40px 0; /* Add some padding */
-    max-width: 800px; /* Limit width for readability */
-    margin: 0 auto; /* Center the main content block */
-}
-
-main.article-main article {
-    background-color: white; /* Ensure article bg is white */
-    padding: 30px; /* Add padding inside the article block */
-    border-radius: var(--radius); /* Apply radius */
-    box-shadow: var(--shadow); /* Apply shadow */
-}
-
-main.article-main h1 {
-    font-size: 2.5rem; /* Adjust article title size */
-    margin-bottom: 20px;
-    color: var(--secondary); /* Use secondary color */
-}
-
-main.article-main h2 {
-    font-size: 1.8rem;
-    margin-top: 30px;
-    margin-bottom: 15px;
-    color: var(--primary); /* Use primary color */
-}
-
-main.article-main p {
-    margin-bottom: 15px;
-    line-height: 1.7; /* Improve readability */
-}
-
-main.article-main ul,
-main.article-main ol {
-    margin: 15px 0;
-    padding-left: 30px; /* Indent lists */
-}
-
-main.article-main li {
-    margin-bottom: 8px;
-}
-
-/* Style for embedded videos */
-.video-container {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    /* Adjust aspect ratio as needed, 16:9 is common */
-    /* padding-top: 56.25%; /* 16:9 Aspect Ratio */
-    margin: 20px 0; /* Add margin */
-}
-
-.video-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: 0; /* Remove default border */
-}
-
-/* Style for article meta information */
-.article-meta {
     display: flex;
-    gap: 20px;
-    color: var(--gray);
-    font-size: 0.9rem;
-    margin-bottom: 20px;
-    padding-bottom: 15px;
-    border-bottom: 1px solid var(--light); /* Add a subtle bottom border */
+    align-items: center;
+    gap: 12px;
 }
 
-/* --- End Article-Specific Main Styles --- */
-
-
-/* --- Footer Styles (Copied from main style.css to ensure consistency) --- */
-/* It's generally better to keep common styles in the main CSS */
-/* and only override specific parts here if needed. */
-/* For now, let's assume the main CSS handles the footer correctly */
-/* and we don't need to redefine everything. */
-/* However, if the footer on articles looks different, */
-/* you might need to copy relevant parts or adjust the main CSS. */
-
-/* --- End Footer Styles --- */
-
-
-/* --- Responsive Adjustments for Article Pages --- */
-@media (max-width: 768px) {
-    .header-container {
-        justify-content: flex-start; /* Revert to default layout on mobile */
-        /* Or handle mobile menu toggle logic differently */
-    }
-
-    .logo {
-        order: 0; /* Reset order */
-    }
-
-    nav {
-        position: static; /* Reset nav position */
-        transform: none; /* Reset transform */
-    }
-
-    .mobile-menu {
-        position: static; /* Reset mobile menu position */
-        transform: none; /* Reset transform */
-        display: block; /* Show mobile menu */
-        margin-left: auto; /* Push it to the right */
-    }
-
-    /* Hide the full nav menu by default on mobile */
-    nav ul {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background: var(--secondary);
-        flex-direction: column;
-        padding: 20px;
-        gap: 15px;
-        box-shadow: var(--shadow-lg);
-        z-index: 101; /* Ensure it appears above other content */
-    }
-
-    /* Show the menu when active */
-    nav ul.active {
-        display: flex;
-    }
-
-    main.article-main article {
-        padding: 20px; /* Reduce padding on smaller screens */
-    }
-
-    main.article-main h1 {
-        font-size: 2rem; /* Reduce title size */
-    }
-
-    main.article-main h2 {
-        font-size: 1.5rem; /* Reduce subtitle size */
-    }
+.logo-icon {
+    font-size: 28px;
+    color: var(--accent);
 }
 
-/* --- Add this section for articles page --- */
-
-.articles-main {
-    padding: 60px 0; /* Add some top/bottom padding */
+.logo-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 700;
 }
 
-.articles-header {
-    text-align: center; /* Center the heading */
-    margin-bottom: 40px; /* Add space between the heading and the grid */
+.logo-text span {
+    color: var(--accent);
 }
 
-.articles-header h1 {
-    /* Inherits font styles from h1 rule defined earlier */
-    /* You can add specific styles for the articles page title here if needed */
-    display: inline-block; /* Makes the ::after pseudo-element work if you want to add an underline */
-    position: relative; /* Allows for positioning of pseudo-elements */
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
 }
 
-.articles-header h1::after {
-    /* Optional: Add an underline similar to section titles */
+nav a {
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 18px;
+    transition: var(--transition);
+    position: relative;
+}
+
+nav a:hover {
+    color: white;
+}
+
+nav a::after {
     content: '';
     position: absolute;
-    bottom: -10px; /* Adjust position */
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent);
+    transition: var(--transition);
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+.mobile-menu {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Hero Section */
+.hero {
+    padding: 100px 0;
+    background: linear-gradient(rgba(67, 97, 238, 0.05), rgba(63, 55, 201, 0.05));
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent), var(--primary));
+    opacity: 0.1;
+}
+
+.hero-content {
+    max-width: 650px;
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    color: var(--secondary);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: var(--gray);
+}
+
+.btn {
+    display: inline-block;
+    padding: 14px 32px;
+    background: var(--primary);
+    color: white;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+    border: 2px solid var(--primary);
+    box-shadow: var(--shadow);
+}
+
+.btn:hover {
+    background: transparent;
+    color: var(--primary);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--primary);
+    margin-left: 15px;
+}
+
+.btn-outline:hover {
+    background: var(--primary);
+    color: white;
+}
+
+/* Featured Posts */
+.section-title {
+    text-align: center;
+    margin: 60px 0 40px;
+    position: relative;
+}
+
+.section-title h2 {
+    font-size: 2.5rem;
+    color: var(--secondary);
+    display: inline-block;
+}
+
+.section-title h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
     left: 50%;
     transform: translateX(-50%);
-    width: 80px; /* Adjust width */
-    height: 4px; /* Adjust height */
-    background: var(--accent); /* Use accent color */
+    width: 80px;
+    height: 4px;
+    background: var(--accent);
     border-radius: 2px;
 }
 
-/* --- End of addition for articles page --- */
+.posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+}
 
+.post-card {
+    background: white;
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
 
-/* --- Existing Footer Styles (should remain as they were, just reiterated for context) --- */
+.post-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-lg);
+}
+
+.post-img {
+    height: 200px;
+    background: linear-gradient(45deg, var(--primary), var(--accent));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 2rem;
+}
+
+.post-content {
+    padding: 25px;
+}
+
+.post-category {
+    display: inline-block;
+    padding: 5px 15px;
+    background: rgba(67, 97, 238, 0.1);
+    color: var(--primary);
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.post-title {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.post-excerpt {
+    color: var(--gray);
+    margin-bottom: 20px;
+}
+
+.post-meta {
+    display: flex;
+    justify-content: space-between;
+    color: var(--gray);
+    font-size: 0.9rem;
+}
+
+/* Newsletter */
+.newsletter {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    padding: 80px 0;
+    color: white;
+    text-align: center;
+    margin: 60px 0;
+}
+
+.newsletter h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.newsletter p {
+    max-width: 600px;
+    margin: 0 auto 30px;
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+.newsletter-form {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    gap: 10px;
+}
+
+.newsletter-form input {
+    flex: 1;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+}
+
+.newsletter-form button {
+    padding: 15px 30px;
+    background: var(--accent);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.newsletter-form button:hover {
+    background: white;
+    color: var(--primary);
+}
+
 /* Footer */
 footer {
     background: var(--dark);
@@ -273,18 +343,150 @@ footer {
     justify-items: center;
 }
 
-/* ... rest of footer styles ... */
+.footer-col h3 {
+    color: white;
+    margin-bottom: 25px;
+    font-size: 1.5rem;
+    /* Ensure the heading itself is centered if its container is centered */
+    text-align: center;
+}
 
-/* --- End of Existing Footer Styles --- */
+.footer-col p {
+    margin-bottom: 20px; /* Adjusted margin */
+    /* Center text within paragraphs */
+    text-align: center;
+}
 
-/* --- Responsive Design --- */
+/* New styles for the logo block wrapper */
+.footer-logo-block {
+    width: 100%; /* Take full width of the column */
+    display: flex; /* Use flex to center the logo div */
+    justify-content: center; /* Center the logo horizontally */
+    margin-bottom: 15px; /* Add space below the logo block */
+}
+
+/* The logo itself should remain side-by-side as per original styles */
+.logo {
+    /* Keep original styles for side-by-side layout */
+    display: flex; /* Original style */
+    align-items: center; /* Original style */
+    gap: 12px; /* Original style */
+    /* Remove any specific centering from the logo if it existed before */
+    /* margin-left: auto; margin-right: auto; is replaced by parent justify-content */
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px; /* Add space above social links */
+    /* Center the flex container itself */
+    justify-content: center;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border-radius: 50%;
+    transition: var(--transition);
+}
+
+.social-links a:hover {
+    background: var(--accent);
+    transform: translateY(-3px);
+}
+
+/* New Styles for Platform Links */
+.platform-links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Increased gap for better spacing between items */
+    margin-top: 20px; /* Add space above platform links */
+    /* Center the flex container itself */
+    justify-content: center;
+    align-items: center; /* Center the items inside the flex container */
+    width: 100%; /* Ensure it takes full width of its grid cell to center properly */
+    text-align: center; /* Center text inside the container */
+}
+
+.platform-item {
+    display: flex;
+    align-items: center; /* Align icon and text vertically */
+    gap: 10px; /* Space between icon and text block */
+    width: 100%; /* Full width */
+    text-align: left; /* Align text inside the item to the left */
+}
+
+.platform-icon {
+    font-size: 1.5rem; /* Adjust icon size */
+    color: var(--accent); /* Use accent color for icons */
+    min-width: 30px; /* Ensure consistent spacing even if icon sizes vary slightly */
+    text-align: center; /* Center the icon within its space */
+}
+
+.platform-content {
+    display: flex;
+    flex-direction: column;
+    gap: 5px; /* Space between link and description */
+    flex-grow: 1; /* Allow content to take remaining space */
+}
+
+.platform-content a {
+    color: rgba(255, 255, 255, 0.9); /* Slightly brighter color for the link */
+    text-decoration: none;
+    font-weight: 500; /* Make link slightly bolder */
+    transition: var(--transition);
+    display: block; /* Make link take full width of its container */
+    text-align: left; /* Align link text to the left */
+}
+
+.platform-content a:hover {
+    color: var(--accent);
+    /* Remove padding-left on hover as text-align center is used */
+    /* padding-left: 5px; */
+}
+
+.platform-content p {
+    margin: 0; /* Reset paragraph margin */
+    font-size: 0.9rem; /* Slightly smaller font for description */
+    color: rgba(255, 255, 255, 0.6); /* Lighter color for description */
+    text-align: left; /* Align description text to the left */
+}
+
+
+.footer-links {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.footer-links a:hover {
+    color: var(--accent);
+    padding-left: 5px;
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive Design */
 @media (max-width: 992px) {
     .hero h1 {
         font-size: 2.8rem;
-    }
-
-    .articles-header h1 {
-        font-size: 2.2rem; /* Adjust size on medium screens */
     }
 }
 
@@ -347,10 +549,6 @@ footer {
     .platform-content p {
         text-align: center; /* Center the link and paragraph text */
     }
-
-    .articles-header h1 {
-        font-size: 2rem; /* Adjust size on small screens */
-    }
 }
 
 @media (max-width: 576px) {
@@ -362,3 +560,5 @@ footer {
         font-size: 2rem;
     }
 }
+
+
