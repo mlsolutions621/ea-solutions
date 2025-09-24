@@ -404,7 +404,7 @@ footer {
 .platform-links {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 15px; /* Increased gap for better spacing between items */
     margin-top: 20px; /* Add space above platform links */
     /* Center the flex container itself */
     justify-content: center;
@@ -413,27 +413,50 @@ footer {
     text-align: center; /* Center text inside the container */
 }
 
-.platform-links p {
-    margin: 0; /* Reset default paragraph margin */
-    /* Text alignment is handled by .platform-links p and .footer-col p */
+.platform-item {
+    display: flex;
+    align-items: center; /* Align icon and text vertically */
+    gap: 10px; /* Space between icon and text block */
+    width: 100%; /* Full width */
+    text-align: left; /* Align text inside the item to the left */
 }
 
-.platform-links a {
-    color: rgba(255, 255, 255, 0.7);
+.platform-icon {
+    font-size: 1.5rem; /* Adjust icon size */
+    color: var(--accent); /* Use accent color for icons */
+    min-width: 30px; /* Ensure consistent spacing even if icon sizes vary slightly */
+    text-align: center; /* Center the icon within its space */
+}
+
+.platform-content {
+    display: flex;
+    flex-direction: column;
+    gap: 5px; /* Space between link and description */
+    flex-grow: 1; /* Allow content to take remaining space */
+}
+
+.platform-content a {
+    color: rgba(255, 255, 255, 0.9); /* Slightly brighter color for the link */
     text-decoration: none;
+    font-weight: 500; /* Make link slightly bolder */
     transition: var(--transition);
-    display: inline-block; /* Allows padding/margin to affect link area */
-    padding: 5px 0; /* Add some space around the link text */
-    /* Text alignment is handled by .platform-links p and .footer-col p */
-    width: 100%; /* Make links take full width to center text inside */
-    text-align: center; /* Ensure text inside the link is centered */
+    display: block; /* Make link take full width of its container */
+    text-align: left; /* Align link text to the left */
 }
 
-.platform-links a:hover {
+.platform-content a:hover {
     color: var(--accent);
     /* Remove padding-left on hover as text-align center is used */
     /* padding-left: 5px; */
 }
+
+.platform-content p {
+    margin: 0; /* Reset paragraph margin */
+    font-size: 0.9rem; /* Slightly smaller font for description */
+    color: rgba(255, 255, 255, 0.6); /* Lighter color for description */
+    text-align: left; /* Align description text to the left */
+}
+
 
 .footer-links {
     list-style: none;
@@ -510,6 +533,22 @@ footer {
     .newsletter-form {
         flex-direction: column;
     }
+
+    /* Adjust platform items for mobile */
+    .platform-item {
+        flex-direction: column; /* Stack icon and text vertically on mobile */
+        align-items: flex-start; /* Align items to the start */
+        text-align: center; /* Center text inside the item */
+    }
+
+    .platform-content {
+        text-align: center; /* Center text inside the content block */
+    }
+
+    .platform-content a,
+    .platform-content p {
+        text-align: center; /* Center the link and paragraph text */
+    }
 }
 
 @media (max-width: 576px) {
@@ -521,5 +560,6 @@ footer {
         font-size: 2rem;
     }
 }
+
 
 
