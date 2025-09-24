@@ -1,0 +1,225 @@
+/* article-style.css */
+
+/* Link to the main CSS file first */
+/* This is done in the HTML using multiple <link> tags */
+/* We will define specific overrides here */
+
+
+/* --- Header Override for Article Pages --- */
+/* If you want the logo to be centered in the header on article pages */
+/* (This changes the default layout from logo-left, menu-right) */
+/* You might need to adjust the HTML structure slightly if using space-between */
+
+/* Option 1: If you want the logo to be the center item */
+/* This requires changing the HTML to have logo in the center */
+/* <div class="header-container">
+       <div></div> <!- - Empty space or left item - ->
+       <div class="logo">...</div>
+       <nav>...</nav>
+   </div> */
+/* And then use justify-content: space-around or space-evenly */
+/*
+.header-container {
+    justify-content: space-around; 
+}
+*/
+
+/* Option 2: If you want the logo div itself to be centered within the container */
+/* This requires changing the container's flex behavior */
+.header-container {
+    justify-content: center; /* This centers the logo, but pushes the nav to the right */
+    /* To keep nav on the right, you might need absolute positioning or a different layout */
+    position: relative; /* For absolute positioning of nav */
+}
+
+.logo {
+    /* No specific change needed here, it will be centered due to justify-content: center */
+    /* on the parent .header-container */
+    order: 1; /* Place it in the center visually if needed */
+}
+
+/* Move the nav to the right using absolute positioning */
+nav {
+    position: absolute;
+    right: 0; /* Align nav to the right edge of the container */
+    top: 50%;
+    transform: translateY(-50%); /* Vertically center nav */
+}
+
+/* Hide the mobile menu button if it's not needed for centering logic */
+/* Or handle it differently in the JS for this layout */
+.mobile-menu {
+    /* display: none; */ /* Only if you don't want the mobile menu */
+    position: absolute;
+    left: 0; /* Position mobile menu on the left */
+    top: 50%;
+    transform: translateY(-50%); /* Vertically center mobile menu */
+}
+
+/* Option 3: Keep space-between but center the logo item itself */
+/* This is less common and requires specific width management */
+/*
+.header-container {
+    justify-content: space-between; 
+    align-items: center;
+}
+.logo {
+    margin: 0 auto; /* This centers the logo but might interfere with space-between */
+}
+nav ul {
+    margin-left: auto; /* Push nav to the right */
+}
+*/
+
+/* For now, using Option 2 seems most straightforward for centering the logo visually */
+/* while keeping the nav on the right, assuming the HTML structure is flexible enough */
+/* or the mobile menu is handled separately if visible. */
+
+/* --- End Header Override --- */
+
+/* --- Article-Specific Main Styles --- */
+/* You can add styles specific to the article content here if needed */
+/* For example, styling the article content area */
+
+main.article-main {
+    padding: 40px 0; /* Add some padding */
+    max-width: 800px; /* Limit width for readability */
+    margin: 0 auto; /* Center the main content block */
+}
+
+main.article-main article {
+    background-color: white; /* Ensure article bg is white */
+    padding: 30px; /* Add padding inside the article block */
+    border-radius: var(--radius); /* Apply radius */
+    box-shadow: var(--shadow); /* Apply shadow */
+}
+
+main.article-main h1 {
+    font-size: 2.5rem; /* Adjust article title size */
+    margin-bottom: 20px;
+    color: var(--secondary); /* Use secondary color */
+}
+
+main.article-main h2 {
+    font-size: 1.8rem;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    color: var(--primary); /* Use primary color */
+}
+
+main.article-main p {
+    margin-bottom: 15px;
+    line-height: 1.7; /* Improve readability */
+}
+
+main.article-main ul,
+main.article-main ol {
+    margin: 15px 0;
+    padding-left: 30px; /* Indent lists */
+}
+
+main.article-main li {
+    margin-bottom: 8px;
+}
+
+/* Style for embedded videos */
+.video-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    /* Adjust aspect ratio as needed, 16:9 is common */
+    /* padding-top: 56.25%; /* 16:9 Aspect Ratio */
+    margin: 20px 0; /* Add margin */
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0; /* Remove default border */
+}
+
+/* Style for article meta information */
+.article-meta {
+    display: flex;
+    gap: 20px;
+    color: var(--gray);
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--light); /* Add a subtle bottom border */
+}
+
+/* --- End Article-Specific Main Styles --- */
+
+
+/* --- Footer Styles (Copied from main style.css to ensure consistency) --- */
+/* It's generally better to keep common styles in the main CSS */
+/* and only override specific parts here if needed. */
+/* For now, let's assume the main CSS handles the footer correctly */
+/* and we don't need to redefine everything. */
+/* However, if the footer on articles looks different, */
+/* you might need to copy relevant parts or adjust the main CSS. */
+
+/* --- End Footer Styles --- */
+
+
+/* --- Responsive Adjustments for Article Pages --- */
+@media (max-width: 768px) {
+    .header-container {
+        justify-content: flex-start; /* Revert to default layout on mobile */
+        /* Or handle mobile menu toggle logic differently */
+    }
+
+    .logo {
+        order: 0; /* Reset order */
+    }
+
+    nav {
+        position: static; /* Reset nav position */
+        transform: none; /* Reset transform */
+    }
+
+    .mobile-menu {
+        position: static; /* Reset mobile menu position */
+        transform: none; /* Reset transform */
+        display: block; /* Show mobile menu */
+        margin-left: auto; /* Push it to the right */
+    }
+
+    /* Hide the full nav menu by default on mobile */
+    nav ul {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--secondary);
+        flex-direction: column;
+        padding: 20px;
+        gap: 15px;
+        box-shadow: var(--shadow-lg);
+        z-index: 101; /* Ensure it appears above other content */
+    }
+
+    /* Show the menu when active */
+    nav ul.active {
+        display: flex;
+    }
+
+    main.article-main article {
+        padding: 20px; /* Reduce padding on smaller screens */
+    }
+
+    main.article-main h1 {
+        font-size: 2rem; /* Reduce title size */
+    }
+
+    main.article-main h2 {
+        font-size: 1.5rem; /* Reduce subtitle size */
+    }
+}
+
+/* --- End Responsive Adjustments --- */
