@@ -561,7 +561,7 @@ footer {
     }
 }
 
-/* --- Add this section for articles page --- */
+/* --- Add this section for articles page and article content styling --- */
 
 .articles-main {
     padding: 60px 0; /* Add some top/bottom padding */
@@ -590,6 +590,134 @@ footer {
     height: 4px; /* Adjust height */
     background: var(--accent); /* Use accent color */
     border-radius: 2px;
+}
+
+/* Specific styles for the main article content area */
+.article-main {
+    padding: 60px 0; /* Add vertical padding around the article content */
+}
+
+.article-main article {
+    background-color: white; /* Ensure background is white */
+    padding: 40px; /* Add padding inside the article block */
+    border-radius: var(--radius); /* Apply border radius */
+    box-shadow: var(--shadow); /* Apply shadow */
+    max-width: 800px; /* Limit width for better readability */
+    margin: 0 auto; /* Center the article block */
+}
+
+.article-main h1 {
+    font-size: 2.5rem; /* Adjust title size */
+    margin-bottom: 15px; /* Add space below the main title */
+    color: var(--secondary); /* Use secondary color */
+}
+
+.article-main .article-meta {
+    display: flex;
+    gap: 20px;
+    color: var(--gray);
+    font-size: 0.9rem;
+    margin-bottom: 25px; /* Add space below meta info */
+    padding-bottom: 15px; /* Add a subtle bottom border via padding and border */
+    border-bottom: 1px solid var(--light); /* Subtle bottom border */
+}
+
+.article-main h2 {
+    font-size: 1.8rem;
+    margin-top: 35px; /* Add space above secondary headings */
+    margin-bottom: 15px; /* Add space below secondary headings */
+    color: var(--primary); /* Use primary color */
+}
+
+.article-main h3 {
+    font-size: 1.4rem;
+    margin-top: 30px; /* Add space above tertiary headings */
+    margin-bottom: 12px; /* Add space below tertiary headings */
+    color: var(--secondary); /* Use secondary color */
+}
+
+.article-main p {
+    margin-bottom: 20px; /* Add consistent space below paragraphs */
+    line-height: 1.7; /* Improve readability */
+}
+
+.article-main ul,
+.article-main ol {
+    margin: 20px 0; /* Add space above and below lists */
+    padding-left: 30px; /* Indent lists */
+}
+
+.article-main li {
+    margin-bottom: 10px; /* Add space between list items */
+}
+
+.article-main a {
+    color: var(--primary); /* Use primary color for links */
+    text-decoration: underline; /* Underline links */
+    transition: var(--transition); /* Add transition for hover effect */
+}
+
+.article-main a:hover {
+    color: var(--accent); /* Change color on hover */
+    text-decoration: none; /* Remove underline on hover */
+}
+
+/* Style for embedded videos */
+.video-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    /* 16:9 Aspect Ratio */
+    padding-top: 56.25%;
+    margin: 30px 0; /* Add margin above and below the video */
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0; /* Remove default border */
+    border-radius: calc(var(--radius) * 0.5); /* Optional: slight rounding */
+}
+
+/* Responsive adjustments for article content */
+@media (max-width: 768px) {
+    .article-main article {
+        padding: 25px; /* Reduce padding on smaller screens */
+    }
+
+    .article-main h1 {
+        font-size: 2rem; /* Reduce title size */
+    }
+
+    .article-main h2 {
+        font-size: 1.6rem; /* Reduce subtitle size */
+    }
+
+    .article-main h3 {
+        font-size: 1.3rem; /* Reduce subtitle size */
+    }
+
+    .article-main .article-meta {
+        flex-direction: column; /* Stack meta items vertically on small screens */
+        gap: 8px;
+    }
+
+    .articles-header h1 {
+        font-size: 2.2rem; /* Adjust size on medium screens */
+    }
+}
+
+@media (max-width: 576px) {
+    .articles-header h1 {
+        font-size: 2rem; /* Adjust size on small screens */
+    }
+
+    .section-title h2 {
+        font-size: 2rem;
+    }
 }
 
 /* --- End of addition for articles page --- */
