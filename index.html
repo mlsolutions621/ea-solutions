@@ -1,71 +1,145 @@
-<!-- index.html (updated) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EA-Solutions | Every Article Solutions</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <i class="fas fa-lightbulb logo-icon"></i>
+                <div class="logo-text">EA-<span>Solutions</span></div>
+            </div>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Articles</a></li>
+                    <li><a href="#">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Every Article, Every Solution</h1>
+                <p>Welcome to EA-Solutions, your go-to destination for insightful articles, expert solutions, and thought-provoking content across technology, business, and lifestyle.</p>
+                <div class="hero-buttons">
+                    <a href="#" class="btn">Explore Articles</a>
+                    <a href="#" class="btn btn-outline">Subscribe</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<div class="post-card">
-<div class="post-img">
-<i class="fas fa-brain"></i>
-</div>
-<div class="post-content">
-<span class="post-category">Lifestyle</span>
-<h3 class="post-title">Mindfulness Practices for Remote Workers</h3>
-<p class="post-excerpt">Effective mindfulness techniques to maintain productivity and mental well-being while working from home.</p>
-<div class="post-meta">
-<span><i class="far fa-calendar"></i> May 28, 2023</span>
-<span><i class="far fa-clock"></i> 4 min read</span>
-</div>
-</div>
-</div>
-</div>
-</section>
+    <!-- Featured Posts -->
+    <section class="container">
+        <div class="section-title">
+            <h2>Featured Articles</h2>
+        </div>
+        <div class="posts-grid">
+            <!-- Post 1 -->
+            <div class="post-card">
+                <div class="post-img">
+                    <i class="fas fa-laptop-code"></i>
+                </div>
+                <div class="post-content">
+                    <span class="post-category">Technology</span>
+                    <h3 class="post-title">The Future of Web Development in 2023</h3>
+                    <p class="post-excerpt">Exploring the latest trends and technologies shaping the future of web development and how developers can stay ahead.</p>
+                    <div class="post-meta">
+                        <span><i class="far fa-calendar"></i> June 12, 2023</span>
+                        <span><i class="far fa-clock"></i> 5 min read</span>
+                    </div>
+                </div>
+            </div>
 
+            <!-- Post 2 -->
+            <div class="post-card">
+                <div class="post-img">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <div class="post-content">
+                    <span class="post-category">Business</span>
+                    <h3 class="post-title">Building Sustainable Startups in a Digital World</h3>
+                    <p class="post-excerpt">Key strategies for creating environmentally and financially sustainable startups in today's competitive market.</p>
+                    <div class="post-meta">
+                        <span><i class="far fa-calendar"></i> June 5, 2023</span>
+                        <span><i class="far fa-clock"></i> 7 min read</span>
+                    </div>
+                </div>
+            </div>
 
-<!-- Newsletter -->
-<section class="newsletter">
-<div class="container">
-<h2>Stay Updated</h2>
-<p>Subscribe to our newsletter and never miss our latest articles and insights. Join thousands of subscribers today!</p>
+            <!-- Post 3 -->
+            <div class="post-card">
+                <div class="post-img">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <div class="post-content">
+                    <span class="post-category">Lifestyle</span>
+                    <h3 class="post-title">Mindfulness Practices for Remote Workers</h3>
+                    <p class="post-excerpt">Effective mindfulness techniques to maintain productivity and mental well-being while working from home.</p>
+                    <div class="post-meta">
+                        <span><i class="far fa-calendar"></i> May 28, 2023</span>
+                        <span><i class="far fa-clock"></i> 4 min read</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="container">
+            <h2>Stay Updated</h2>
+            <p>Subscribe to our newsletter and never miss our latest articles and insights. Join thousands of subscribers today!</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Enter your email address" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </section>
 
-<!-- NOTE: We handle submission client-side. Default behavior: open user's mail client (mailto). -->
-<form id="newsletter-form" class="newsletter-form" novalidate>
-<input id="newsletter-email" type="email" placeholder="Enter your email address" required aria-label="Email address">
-<button id="newsletter-submit" type="submit">Subscribe</button>
-</form>
-<p id="newsletter-status" class="muted small" aria-live="polite" style="margin-top:12px"></p>
-</div>
-</section>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo">
+                        <i class="fas fa-lightbulb logo-icon"></i>
+                        <div class="logo-text">EA-<span>Solutions</span></div>
+                    </div>
+                    <p>Providing insightful articles and practical solutions for the modern world. Your trusted source for knowledge and inspiration.</p>
+                    <div class="social-links">
+                        <a href="https://web.facebook.com/profile.php?id=61577392417332" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.youtube.com/@MLSolutions621" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Our Platforms</h3>
+                    <div class="platform-links">
+                        <p><a href="https://movies-solutions.online" target="_blank" rel="noopener">movies-solutions.online</a></p>
+                        <p><a href="https://manganmanhwa-solutions.online" target="_blank" rel="noopener">manganmanhwa-solutions.online</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 EA-Solutions. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 
-
-<!-- Footer -->
-<footer>
-<div class="container">
-<div class="footer-grid">
-<div class="footer-col">
-<div class="logo">
-<i class="fas fa-lightbulb logo-icon"></i>
-<div class="logo-text">EA-<span>Solutions</span></div>
-</div>
-<p>Providing insightful articles and practical solutions for the modern world. Your trusted source for knowledge and inspiration.</p>
-<div class="social-links">
-<a href="https://web.facebook.com/profile.php?id=61577392417332" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-<a href="https://www.youtube.com/@MLSolutions621" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-</div>
-</div>
-
-
-<div class="footer-col">
-<h3>Visit Our Platforms</h3>
-<p class="footer-link-promote"><a href="https://movies-solutions.online" target="_blank" rel="noopener">movies-solutions.online</a><br><small>Watch movies, anime, and TV shows.</small></p>
-<p class="footer-link-promote"><a href="https://manganmanhwa-solutions.online" target="_blank" rel="noopener">manganmanhwa-solutions.online</a><br><small>Read manga and manhwa.</small></p>
-</div>
-</div>
-<div class="copyright">
-<p>&copy; 2025 EA-Solutions. All rights reserved.</p>
-</div>
-</div>
-</footer>
-
-
-<script src="js/app.js"></script>
+    <script src="js/app.js"></script>
 </body>
 </html>
