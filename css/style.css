@@ -416,22 +416,30 @@ footer {
     /* padding-left: 5px; */
 }
 
-/* Specific styles for the centered logo and description */
-.centered-logo {
-    display: flex; /* Keep the flex layout for logo icon and text */
-    flex-direction: column; /* Stack icon and text vertically */
-    align-items: center; /* Center them horizontally within the flex container */
-    margin-bottom: 15px; /* Add space below the logo block */
-    text-align: center; /* Center the text inside the logo div */
-}
-
-.centered-logo .logo-text {
-    margin-top: 10px; /* Add space between icon and text */
-}
-
+/* Specific styles for the centered description */
 .centered-text {
     text-align: center; /* Ensure text alignment */
     max-width: 100%; /* Prevent text overflow */
+}
+
+/* Wrapper for centering content within the first column */
+.footer-center-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center child elements (logo, p, social-links) horizontally */
+    text-align: center; /* Center the text inside direct children like p tags */
+    width: 100%; /* Ensure the wrapper takes full width of its grid cell */
+}
+
+/* The logo itself should remain side-by-side as per original styles */
+.logo {
+    /* Remove any specific centering from the logo if it existed before */
+    /* Keep original styles for side-by-side layout */
+    display: flex; /* Original style */
+    align-items: center; /* Original style */
+    gap: 12px; /* Original style */
+    margin-bottom: 15px; /* Add space below the logo block */
+    justify-content: center; /* Center the logo items within the flex container */
 }
 
 .footer-links {
@@ -527,6 +535,11 @@ footer {
     .footer-center-content {
         align-items: center; /* Keep centered on mobile */
         text-align: center;
+    }
+
+    /* Ensure logo remains centered when stacked on mobile */
+    .logo {
+        justify-content: center;
     }
 }
 
