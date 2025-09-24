@@ -355,7 +355,6 @@ footer {
     display: flex;
     gap: 15px;
     margin-top: 20px;
-    justify-content: center; /* Center the social links */
 }
 
 .social-links a {
@@ -380,9 +379,6 @@ footer {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    margin-top: 20px; /* Add space above platform links */
-    align-items: center; /* Center the platform links */
-    text-align: center; /* Center the text inside the paragraphs */
 }
 
 .platform-links p {
@@ -425,22 +421,6 @@ footer {
     text-align: center;
     padding-top: 30px;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-/* Specific styling for the first footer column to center content */
-.footer-col-left {
-    display: flex;
-    justify-content: center; /* Center the content of the first column horizontally */
-    align-items: flex-start; /* Align content to the top within the column */
-}
-
-/* Wrapper for the content inside the first column to stack and center items */
-.footer-center-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Center child elements (logo, text, links) horizontally */
-    text-align: center; /* Center the text inside direct children like p tags */
-    max-width: 100%; /* Ensure it doesn't overflow */
 }
 
 /* Responsive Design */
@@ -492,20 +472,6 @@ footer {
 
     .newsletter-form {
         flex-direction: column;
-    }
-
-    /* Adjust footer for mobile if needed */
-    .footer-grid {
-        grid-template-columns: 1fr; /* Stack columns on small screens */
-    }
-
-    .footer-col-left {
-        justify-content: flex-start; /* Reset centering on mobile if stacking is preferred differently */
-    }
-
-    .footer-center-content {
-        align-items: center; /* Keep centered on mobile */
-        text-align: center;
     }
 }
 
