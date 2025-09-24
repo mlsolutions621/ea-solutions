@@ -331,7 +331,7 @@ nav a:hover::after {
 footer {
     background: var(--dark);
     color: rgba(255, 255, 255, 0.7);
-    padding: 60px 0 40px;
+    padding: 60px 0 30px;
 }
 
 .footer-grid {
@@ -340,7 +340,7 @@ footer {
     gap: 40px;
     margin-bottom: 40px;
     /* Center the content within each grid item */
-    justify-items: center;
+    justify-items: center; 
 }
 
 .footer-col h3 {
@@ -348,21 +348,21 @@ footer {
     margin-bottom: 25px;
     font-size: 1.5rem;
     /* Ensure the heading itself is centered if its container is centered */
-    text-align: center;
+    text-align: center; 
 }
 
 .footer-col p {
-    margin-bottom: 25px;
-    /* Center text within paragraphs by default */
-    text-align: center;
+    margin-bottom: 20px; /* Adjusted margin */
+    /* Center text within paragraphs */
+    text-align: center; 
 }
 
 .social-links {
     display: flex;
     gap: 15px;
-    margin-top: 20px;
+    margin-top: 20px; /* Add space above social links */
     /* Center the flex container itself */
-    justify-content: center;
+    justify-content: center; 
 }
 
 .social-links a {
@@ -386,17 +386,18 @@ footer {
 .platform-links {
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 10px;
+    margin-top: 20px; /* Add space above platform links */
     /* Center the flex container itself */
-    justify-content: center;
+    justify-content: center; 
     align-items: center; /* Center the items inside the flex container */
     width: 100%; /* Ensure it takes full width of its grid cell to center properly */
-    margin-top: 15px; /* Add space above platform links if needed */
+    text-align: center; /* Center text inside the container */
 }
 
 .platform-links p {
     margin: 0; /* Reset default paragraph margin */
-    /* Text alignment is handled by default .footer-col p */
+    /* Text alignment is handled by .platform-links p and .footer-col p */
 }
 
 .platform-links a {
@@ -405,7 +406,7 @@ footer {
     transition: var(--transition);
     display: inline-block; /* Allows padding/margin to affect link area */
     padding: 5px 0; /* Add some space around the link text */
-    /* Text alignment is handled by default .footer-col p */
+    /* Text alignment is handled by .platform-links p and .footer-col p */
     width: 100%; /* Make links take full width to center text inside */
     text-align: center; /* Ensure text inside the link is centered */
 }
@@ -416,36 +417,8 @@ footer {
     /* padding-left: 5px; */
 }
 
-/* Specific styles for the centered description */
-.centered-text {
-    text-align: center; /* Ensure text alignment */
-    max-width: 100%; /* Prevent text overflow */
-}
-
-/* Wrapper for centering content within the first column */
-.footer-center-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Center child elements (logo, p, social-links) horizontally */
-    text-align: center; /* Center the text inside direct children like p tags */
-    width: 100%; /* Ensure the wrapper takes full width of its grid cell */
-}
-
-/* The logo itself should remain side-by-side as per original styles */
-.logo {
-    /* Remove any specific centering from the logo if it existed before */
-    /* Keep original styles for side-by-side layout */
-    display: flex; /* Original style */
-    align-items: center; /* Original style */
-    gap: 12px; /* Original style */
-    margin-bottom: 15px; /* Add space below the logo block */
-    justify-content: center; /* Center the logo items within the flex container */
-}
-
 .footer-links {
     list-style: none;
-    /* Center the list itself */
-    text-align: center;
 }
 
 .footer-links li {
@@ -456,14 +429,11 @@ footer {
     color: rgba(255, 255, 255, 0.7);
     text-decoration: none;
     transition: var(--transition);
-    /* Ensure links are block level to take full width and center text */
-    display: block;
 }
 
 .footer-links a:hover {
     color: var(--accent);
-    /* Remove padding-left on hover as text-align center is used */
-    /* padding-left: 5px; */
+    padding-left: 5px;
 }
 
 .copyright {
@@ -522,25 +492,6 @@ footer {
     .newsletter-form {
         flex-direction: column;
     }
-
-    /* Adjust footer for mobile if needed */
-    .footer-grid {
-        grid-template-columns: 1fr; /* Stack columns on small screens */
-    }
-
-    .footer-col-left {
-        justify-content: flex-start; /* Reset centering on mobile if stacking is preferred differently */
-    }
-
-    .footer-center-content {
-        align-items: center; /* Keep centered on mobile */
-        text-align: center;
-    }
-
-    /* Ensure logo remains centered when stacked on mobile */
-    .logo {
-        justify-content: center;
-    }
 }
 
 @media (max-width: 576px) {
@@ -552,3 +503,4 @@ footer {
         font-size: 2rem;
     }
 }
+
