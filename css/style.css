@@ -374,6 +374,30 @@ footer {
     transform: translateY(-3px);
 }
 
+/* New Styles for Platform Links */
+.platform-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.platform-links p {
+    margin: 0; /* Reset default paragraph margin */
+}
+
+.platform-links a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: var(--transition);
+    display: inline-block; /* Allows padding/margin to affect link area */
+    padding: 5px 0; /* Add some space around the link text */
+}
+
+.platform-links a:hover {
+    color: var(--accent);
+    padding-left: 5px; /* Visual indicator on hover */
+}
+
 .footer-links {
     list-style: none;
 }
